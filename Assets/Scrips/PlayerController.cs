@@ -5,9 +5,16 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerController : MonoBehaviour
 {
+    
     [SerializeField]
     private float walkSpeed;
 
+    [SerializeField]
+    private float runSpeed;
+    private float applySpeed;
+    
+    private bool isRun = false;
+    
     [SerializeField]
     private float lookSensitivity;
 
@@ -25,14 +32,40 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         myRigid = GetComponent<Rigidbody>();
+        applySpeed = walkSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        TryRun();
         Move();
         CameraRotation();
         CharacterRotation();
+    }
+
+    private void TryRun()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Running();
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            RunningCencel();
+        }
+    }
+
+    private void Running()
+    {
+        isRun = true;
+        applySpeed = runSpeed;
+    }
+
+    private void RunningCencel()
+    {
+        isRun = false;
+        applySpeed = walkSpeed;
     }
 
     private void Move()
@@ -43,7 +76,7 @@ public class PlayerController : MonoBehaviour
         Vector3 _moveHorizontal = transform.right * _moveDirX;
         Vector3 _moveVertical = transform.forward * _moveDirZ;
 
-        Vector3 _velocity = (_moveHorizontal + _moveVertical).normalized * walkSpeed;
+        Vector3 _velocity = (_moveHorizontal + _moveVertical).normalized * applySpeed;
 
         myRigid.MovePosition(transform.position + _velocity * Time.deltaTime);
     }
