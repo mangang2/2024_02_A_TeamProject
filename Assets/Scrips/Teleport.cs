@@ -5,13 +5,20 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject TeleportTo;
+    public GameObject ButtonTeleport;
+    public GameObject TopTeleport;
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Teleporter"))
+        if (collision.gameObject.CompareTag("ButtonTeleport"))
         {
-            Player.transform.position = TeleportTo.transform.position;
+            Player.transform.position = ButtonTeleport.transform.position;
+
+        }
+
+        if (collision.gameObject.CompareTag("TopTeleport"))
+        {
+            Player.transform.position = TopTeleport.transform.position;
 
         }
     }
