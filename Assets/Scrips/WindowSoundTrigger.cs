@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class WindowSoundTrigger : MonoBehaviour
 {
 
     public AudioSource windSound; // 오디오 소스를 연결할 변수
