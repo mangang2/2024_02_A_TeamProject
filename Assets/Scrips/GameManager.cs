@@ -47,8 +47,8 @@ public class GameManager : MonoBehaviour
             // 교체 횟수 증가 추가
             swapCount++;
 
-            // 교체 횟수가 5에 도달하면 게임 종료 추가
-            if (swapCount >= 5)
+            // 교체 횟수가 6에 도달하면 게임 종료 추가
+            if (swapCount >= 6)
             {
                 Debug.Log("게임 종료!");
                 Application.Quit();  // 게임 종료
@@ -96,8 +96,8 @@ public class GameManager : MonoBehaviour
             // 교체 횟수 증가 추가
             swapCount++;
 
-            // 교체 횟수가 5에 도달하면 게임 종료 추가
-            if (swapCount >= 5)
+            // 교체 횟수가 6에 도달하면 게임 종료 추가
+            if (swapCount >= 6)
             {
                 Debug.Log("게임 종료!");
                 Application.Quit();  // 게임 종료
