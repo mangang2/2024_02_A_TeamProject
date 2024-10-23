@@ -93527,8 +93527,9 @@ GameObject:
   - component: {fileID: 919132148448387758}
   - component: {fileID: 919132148448387761}
   - component: {fileID: 919132148448387762}
-  - component: {fileID: 919132148448387763}
   - component: {fileID: 919132148448387764}
+  - component: {fileID: 919132148448387765}
+  - component: {fileID: 919132148448387766}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -93553,6 +93554,8 @@ MonoBehaviour:
   lookSensitivity: 2
   cameraRotationLimit: 45
   theCamera: {fileID: 1843509963}
+  footstepSource: {fileID: 919132148448387766}
+  footstepClip: {fileID: 8300000, guid: 933b20cfc882a7c49922fe51b19ca09b, type: 3}
 --- !u!54 &919132148448387759
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -93670,7 +93673,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!82 &919132148448387763
+--- !u!114 &919132148448387764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148448387757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd78a943ea4c024c9d49e35070e5ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 919132148448387757}
+  ButtonTeleport: {fileID: 993322489}
+  TopTeleport: {fileID: 1538822808}
+  mapPrefabs:
+  - {fileID: 4158739743539630324, guid: e4769bc49897dfe4c93143b21712c014, type: 3}
+  - {fileID: 6455169774968738405, guid: e5e8b866b66994c69be2e3528d7e6ebf, type: 3}
+  - {fileID: 4830657742328199242, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
+--- !u!143 &919132148448387765
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148448387757}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &919132148448387766
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93680,7 +93728,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 933b20cfc882a7c49922fe51b19ca09b, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -93766,25 +93814,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &919132148448387764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148448387757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fd78a943ea4c024c9d49e35070e5ff3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 919132148448387757}
-  ButtonTeleport: {fileID: 993322489}
-  TopTeleport: {fileID: 1538822808}
-  mapPrefabs:
-  - {fileID: 4158739743539630324, guid: e4769bc49897dfe4c93143b21712c014, type: 3}
-  - {fileID: 6455169774968738405, guid: e5e8b866b66994c69be2e3528d7e6ebf, type: 3}
-  - {fileID: 4830657742328199242, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
 --- !u!33 &1328214627846380985
 MeshFilter:
   m_ObjectHideFlags: 0
