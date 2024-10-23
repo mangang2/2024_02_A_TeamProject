@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;  // 씬 리셋을 위해 필요
 public class GameManager : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject ButtonTeleport;  // ButtonTeleport 위치 (사용하지 않음)
+    public GameObject ButtonTeleport;  // ButtonTeleport 위치 
     public GameObject TopTeleport;      // TopTeleport 위치
     public GameObject[] mapPrefabs;     // 랜덤으로 교체할 맵 프리팹들
 
@@ -34,7 +34,20 @@ public class GameManager : MonoBehaviour
                 Instantiate(randomPrefab, currentMapObject.transform.position, currentMapObject.transform.rotation);
 
                 Debug.Log($"Map이 랜덤 프리팹 '{randomPrefab.name}'로 교체되었습니다.");
+
+                swapCount++;
+
+                // 교체 횟수가 5에 도달하면 게임 종료 추가
+                if (swapCount >= 5)
+                {
+                    Debug.Log("게임 종료!");
+                    Application.Quit();  // 게임 종료
+#if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;  // 에디터에서 종료
+#endif
+                }
             }
+
             else if (currentFakeMapObject != null) // 바뀐 부분
             {
                
@@ -45,17 +58,7 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             // 교체 횟수 증가 추가
-            swapCount++;
-
-            // 교체 횟수가 6에 도달하면 게임 종료 추가
-            if (swapCount >= 6)
-            {
-                Debug.Log("게임 종료!");
-                Application.Quit();  // 게임 종료
-#if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;  // 에디터에서 종료
-#endif
-            }
+      
 
             // 플레이어를 ButtonTeleport 위치로 이동
             Player.transform.position = ButtonTeleport.transform.position;
@@ -76,6 +79,7 @@ public class GameManager : MonoBehaviour
                 // 게임을 처음부터 시작 (현재 씬을 다시 로드)
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+
             else if (currentFakeMapObject != null) // 바뀐 부분
             {
                 // FakeMap이 있는 경우, 해당 오브젝트를 삭제하고 랜덤으로 새 맵 생성
@@ -88,23 +92,25 @@ public class GameManager : MonoBehaviour
                 Instantiate(randomPrefab, currentFakeMapObject.transform.position, currentFakeMapObject.transform.rotation);
 
                 Debug.Log($"FakeMap이 랜덤 프리팹 '{randomPrefab.name}'로 교체되었습니다.");
+
+                // 교체 횟수 증가 추가
+                swapCount++;
+
+                // 교체 횟수가 5에 도달하면 게임 종료 추가
+                if (swapCount >= 5)
+                {
+                    Debug.Log("게임 종료!");
+                    Application.Quit();  // 게임 종료
+#if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;  // 에디터에서 종료
+#endif
+                }
             }
 
             // 플레이어를 TopTeleport 위치로 이동
             Player.transform.position = TopTeleport.transform.position;
 
-            // 교체 횟수 증가 추가
-            swapCount++;
-
-            // 교체 횟수가 6에 도달하면 게임 종료 추가
-            if (swapCount >= 6)
-            {
-                Debug.Log("게임 종료!");
-                Application.Quit();  // 게임 종료
-#if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;  // 에디터에서 종료
-#endif
-            }
+        
 
 
         }
