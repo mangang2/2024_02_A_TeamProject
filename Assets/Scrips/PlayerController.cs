@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,13 +23,17 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private Camera theCamera;
+
     private Rigidbody myRigid;
 
+    // 걷는 소리 추가
     [SerializeField]
-    private AudioSource footstepSource;  // 발소리 오디오 소스
-    [SerializeField]
-    private AudioClip footstepClip;      // 발소리 오디오 클립
+    private AudioSource audioSource; // 발걸음 소리를 재생할 AudioSource
 
+    [SerializeField]
+    private AudioClip footstepClip;  // 발걸음 소리 오디오 클립
+
+    // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -36,8 +41,13 @@ public class PlayerController : MonoBehaviour
 
         myRigid = GetComponent<Rigidbody>();
         applySpeed = walkSpeed;
+
+        // AudioSource 설정
+        audioSource.clip = footstepClip;
+        audioSource.loop = false; // 발걸음 소리는 짧게 반복되므로 false
     }
 
+    // Update is called once per frame
     void FixedUpdate()
     {
         TryRun();
@@ -54,7 +64,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            RunningCancel();
+            RunningCencel();
         }
     }
 
@@ -64,7 +74,7 @@ public class PlayerController : MonoBehaviour
         applySpeed = runSpeed;
     }
 
-    private void RunningCancel()
+    private void RunningCencel()
     {
         isRun = false;
         applySpeed = walkSpeed;
@@ -82,24 +92,22 @@ public class PlayerController : MonoBehaviour
 
         myRigid.MovePosition(transform.position + _velocity * Time.deltaTime);
 
-        // 플레이어가 움직일 때 발소리 재생
-        if (_velocity.magnitude > 0 && !footstepSource.isPlaying)
+        // 캐릭터가 움직일 때 발걸음 소리 재생
+        if (_velocity.magnitude > 0.1f && !audioSource.isPlaying)
         {
-            footstepSource.PlayOneShot(footstepClip);
+            audioSource.Play();
         }
-
-        // 플레이어가 멈추면 발소리 정지
-        if (_velocity.magnitude == 0 && footstepSource.isPlaying)
+        else if (_velocity.magnitude <= 0.1f && audioSource.isPlaying)
         {
-            footstepSource.Stop();
+            audioSource.Stop(); // 캐릭터가 멈추면 발걸음 소리 정지
         }
     }
 
     private void CharacterRotation()
     {
         float _yRotation = Input.GetAxisRaw("Mouse X");
-        Vector3 _characterRotationY = new Vector3(0f, _yRotation, 0f) * lookSensitivity;
-        myRigid.MoveRotation(myRigid.rotation * Quaternion.Euler(_characterRotationY));
+        Vector3 _chataterRotationY = new Vector3(0f, _yRotation, 0f) * lookSensitivity;
+        myRigid.MoveRotation(myRigid.rotation * Quaternion.Euler(_chataterRotationY));
     }
 
     private void CameraRotation()
@@ -112,4 +120,9 @@ public class PlayerController : MonoBehaviour
         theCamera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
     }
 }
+
+
+
+
+
 
