@@ -58,14 +58,8 @@ public class PlayerController : MonoBehaviour
 
     private void TryRun()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            Running();
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            RunningCencel();
-        }
+        isRun = Input.GetKey(KeyCode.LeftShift);
+        applySpeed = isRun ? runSpeed : walkSpeed;
     }
 
     private void Running()
@@ -119,7 +113,10 @@ public class PlayerController : MonoBehaviour
 
         theCamera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
     }
+
 }
+
+
 
 
 
