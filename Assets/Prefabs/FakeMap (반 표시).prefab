@@ -7214,8 +7214,8 @@ Transform:
   m_GameObject: {fileID: 1200683529317757706}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.9500003, y: 3.1499991, z: -3.0634}
-  m_LocalScale: {x: 1, y: 1, z: 1.65179}
+  m_LocalPosition: {x: -4.9500003, y: 3.1499991, z: -0.0462}
+  m_LocalScale: {x: 1, y: 1, z: 1.0097519}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6203895789771438860}
@@ -14163,8 +14163,8 @@ Transform:
   m_GameObject: {fileID: 2745802732751789635}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.9500003, y: 3.1454997, z: 3.0589}
-  m_LocalScale: {x: 1, y: 0.98234, z: 1.6508311}
+  m_LocalPosition: {x: -4.9500003, y: 3.1454997, z: 0.0665}
+  m_LocalScale: {x: 1, y: 0.98234, z: 1.0141201}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8135851385463666300}
@@ -20143,7 +20143,7 @@ GameObject:
   - component: {fileID: 7294625813380068180}
   m_Layer: 0
   m_Name: "FakeMap (\uBC18 \uD45C\uC2DC)"
-  m_TagString: Map
+  m_TagString: FakeMap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20157,7 +20157,7 @@ Transform:
   m_GameObject: {fileID: 3789228077677980715}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.476196, y: 0, z: -25.571133}
+  m_LocalPosition: {x: -5.665289, y: 97.95694, z: -126.76594}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
