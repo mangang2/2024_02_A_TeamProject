@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerController : MonoBehaviour
 {
@@ -50,28 +49,24 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        ApplyGravity(); // 중력 적용
         TryRun();
         Move();
         CameraRotation();
         CharacterRotation();
     }
 
+    private void ApplyGravity()
+    {
+        // 아래 방향으로 힘을 적용하여 플레이어를 지면에 붙이기
+        Vector3 gravity = new Vector3(0, -19.62f, 0); // 중력 값
+        myRigid.AddForce(gravity, ForceMode.Acceleration);
+    }
+
     private void TryRun()
     {
         isRun = Input.GetKey(KeyCode.LeftShift);
         applySpeed = isRun ? runSpeed : walkSpeed;
-    }
-
-    private void Running()
-    {
-        isRun = true;
-        applySpeed = runSpeed;
-    }
-
-    private void RunningCencel()
-    {
-        isRun = false;
-        applySpeed = walkSpeed;
     }
 
     private void Move()
@@ -113,8 +108,8 @@ public class PlayerController : MonoBehaviour
 
         theCamera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
     }
-
 }
+
 
 
 
