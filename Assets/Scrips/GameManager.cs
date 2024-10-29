@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject ButtonTeleport;  // ButtonTeleport 위치 
-    public GameObject TopTeleport;      // TopTeleport 위치
-    public GameObject[] mapPrefabs;     // 랜덤으로 교체할 맵 프리팹들
+    public GameObject ButtonTeleport;
+    public GameObject TopTeleport;
+    public GameObject[] mapPrefabs;
 
-    private int swapCount = 0;  // 교체 횟수를 저장하는 변수 추가
-    private int previousIndex = -1;  // 이전에 선택된 맵의 인덱스를 저장하는 변수
+    private int swapCount = 0;
+    private int previousIndex = -1;
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -24,13 +24,12 @@ public class GameManager : MonoBehaviour
             {
                 int randomIndex;
 
-                // 이전 인덱스와 다른 인덱스를 선택
                 do
                 {
                     randomIndex = Random.Range(0, mapPrefabs.Length);
                 } while (randomIndex == previousIndex);
 
-                previousIndex = randomIndex;  // 이전 인덱스 업데이트
+                previousIndex = randomIndex;
                 GameObject randomPrefab = mapPrefabs[randomIndex];
 
                 Destroy(currentMapObject);
@@ -41,11 +40,8 @@ public class GameManager : MonoBehaviour
 
                 if (swapCount >= 5)
                 {
-                    Debug.Log("게임 종료!");
-                    Application.Quit();
-#if UNITY_EDITOR
-                    UnityEditor.EditorApplication.isPlaying = false;
-#endif
+                    Debug.Log("게임 종료! StartScene으로 이동합니다.");
+                    SceneManager.LoadScene("StartScene");
                 }
             }
             else if (currentFakeMapObject != null)
@@ -77,7 +73,7 @@ public class GameManager : MonoBehaviour
                     randomIndex = Random.Range(0, mapPrefabs.Length);
                 } while (randomIndex == previousIndex);
 
-                previousIndex = randomIndex;  // 이전 인덱스 업데이트
+                previousIndex = randomIndex;
                 GameObject randomPrefab = mapPrefabs[randomIndex];
 
                 Instantiate(randomPrefab, currentFakeMapObject.transform.position, currentFakeMapObject.transform.rotation);
@@ -87,11 +83,8 @@ public class GameManager : MonoBehaviour
 
                 if (swapCount >= 5)
                 {
-                    Debug.Log("게임 종료!");
-                    Application.Quit();
-#if UNITY_EDITOR
-                    UnityEditor.EditorApplication.isPlaying = false;
-#endif
+                    Debug.Log("게임 종료! StartScene으로 이동합니다.");
+                    SceneManager.LoadScene("StartScene");
                 }
             }
 
