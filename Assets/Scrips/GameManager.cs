@@ -13,6 +13,12 @@ public class GameManager : MonoBehaviour
     private int swapCount = 0;
     private int previousIndex = -1;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("ButtonTeleport"))
@@ -41,6 +47,10 @@ public class GameManager : MonoBehaviour
                 if (swapCount >= 5)
                 {
                     Debug.Log("게임 종료! StartScene으로 이동합니다.");
+
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+
                     SceneManager.LoadScene("StartScene");
                 }
             }
@@ -84,6 +94,11 @@ public class GameManager : MonoBehaviour
                 if (swapCount >= 5)
                 {
                     Debug.Log("게임 종료! StartScene으로 이동합니다.");
+
+
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+
                     SceneManager.LoadScene("StartScene");
                 }
             }
