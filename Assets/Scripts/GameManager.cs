@@ -57,7 +57,20 @@ public class GameManager : MonoBehaviour
             else if (currentFakeMapObject != null)
             {
                 Destroy(currentFakeMapObject);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+                int randomIndex;
+                do
+                {
+                    randomIndex = Random.Range(0, mapPrefabs.Length);
+                } while (randomIndex == previousIndex);
+
+                previousIndex = randomIndex;
+                GameObject randomPrefab = mapPrefabs[randomIndex];
+
+                Instantiate(randomPrefab, currentFakeMapObject.transform.position, currentFakeMapObject.transform.rotation);
+
+                Debug.Log($"FakeMap이 랜덤 프리팹 '{randomPrefab.name}'로 교체되었습니다.");
+                swapCount = 0;
             }
 
             Player.transform.position = ButtonTeleport.transform.position;
@@ -70,8 +83,21 @@ public class GameManager : MonoBehaviour
 
             if (currentMapObject != null)
             {
+                int randomIndex;
+
+                do
+                {
+                    randomIndex = Random.Range(0, mapPrefabs.Length);
+                } while (randomIndex == previousIndex);
+
+                previousIndex = randomIndex;
+                GameObject randomPrefab = mapPrefabs[randomIndex];
+
                 Destroy(currentMapObject);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                Instantiate(randomPrefab, currentMapObject.transform.position, currentMapObject.transform.rotation);
+
+                Debug.Log($"Map이 랜덤 프리팹 '{randomPrefab.name}'로 교체되었습니다.");
+                swapCount = 0;
             }
             else if (currentFakeMapObject != null)
             {
