@@ -8,6 +8,7 @@ TagManager:
   - TopTeleport
   - Map
   - FakeMap
+  - Number
   layers:
   - Default
   - TransparentFX
