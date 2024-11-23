@@ -504,7 +504,7 @@ MonoBehaviour:
   TopTeleport: {fileID: 1538822808}
   mapPrefabs:
   - {fileID: 4561270288723540327, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
-  - {fileID: 8154864696459670005, guid: 33691727ae5ac4adea02b892f34f74b3, type: 3}
+  - {fileID: 3060652161691885004, guid: 93bed61bed4d045448f90a8eb790ad75, type: 3}
   - {fileID: 4158739743539630324, guid: e4769bc49897dfe4c93143b21712c014, type: 3}
   - {fileID: 3789228077677980715, guid: c8cabd75a90f94b96ae41bc16d62b534, type: 3}
   - {fileID: 6188971083173441665, guid: 08736ea9fdd4e4d4ba76c8205e1bf1f5, type: 3}
