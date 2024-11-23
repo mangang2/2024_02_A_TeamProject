@@ -8877,7 +8877,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.9607843, b: 0.8980392, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.25
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -15279,7 +15279,7 @@ Transform:
   m_GameObject: {fileID: 941723242}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7750069, y: 3.0856762, z: -0.9434962}
+  m_LocalPosition: {x: 0.503, y: 7.551, z: -0.9434962}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27615,7 +27615,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.9610984, b: 0.89622635, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.25
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -51400,6 +51400,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.1333
       objectReference: {fileID: 0}
+    - target: {fileID: 753990978563751526, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1700626499692552960, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -51440,6 +51444,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4158250618224690511, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4561270288723540327, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
       propertyPath: m_Name
       value: Map
@@ -51447,6 +51455,10 @@ PrefabInstance:
     - target: {fileID: 5892833375002063909, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921180778670781073, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -51613,7 +51625,7 @@ Animator:
   m_GameObject: {fileID: 8906441572427944794}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 75004e38a8e7f954f91a8a87d8532ee8, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5bdb08416492b6a4ca6c53cfd9ef5ca1, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
