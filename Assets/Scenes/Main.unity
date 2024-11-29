@@ -503,12 +503,7 @@ MonoBehaviour:
   ButtonTeleport: {fileID: 993322489}
   TopTeleport: {fileID: 1538822808}
   mapPrefabs:
-  - {fileID: 4561270288723540327, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
-  - {fileID: 3060652161691885004, guid: 93bed61bed4d045448f90a8eb790ad75, type: 3}
-  - {fileID: 4158739743539630324, guid: e4769bc49897dfe4c93143b21712c014, type: 3}
-  - {fileID: 3789228077677980715, guid: c8cabd75a90f94b96ae41bc16d62b534, type: 3}
-  - {fileID: 6188971083173441665, guid: 08736ea9fdd4e4d4ba76c8205e1bf1f5, type: 3}
-  - {fileID: 2822509961283703313, guid: c23709fb635f048469dace51bf53274f, type: 3}
+  - {fileID: 2797229393057775426, guid: 0b3d5814b0fb79e4e95fab57e5af5861, type: 3}
   numberPrefabs:
   - {fileID: 5188824644374633243, guid: f741be0f8f6862048ae8653b763761a4, type: 3}
   - {fileID: 306182545855515830, guid: 5ab378f6711adf348a78eead0df83b37, type: 3}
