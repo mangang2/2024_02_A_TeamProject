@@ -16538,7 +16538,7 @@ GameObject:
   - component: {fileID: 5410759930795384362}
   m_Layer: 0
   m_Name: "FakeMap(\uBC29\uC1A1 \uC18C\uB9AC)"
-  m_TagString: Map
+  m_TagString: FakeMap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
