@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] mapPrefabs;
     public GameObject[] numberPrefabs;  // Number 오브젝트 배열
     public GameObject resetPrefab;     // swapCount가 0일 때 생성할 프리팹
+    public GameObject endPrefab;
 
     private int currentNumberIndex = 0;  // 순차적인 인덱스 관리 변수
     private int swapCount = 0;
@@ -200,12 +201,32 @@ public class GameManager : MonoBehaviour
                 // swapCount가 6에 도달하면 게임 종료
                 if (swapCount >= 6)
                 {
-                    Debug.Log("게임 종료! StartScene으로 이동합니다.");
+                    Debug.Log("swapCount가 6에 도달했습니다. Map 또는 FakeMap을 삭제하고 특정 프리팹을 생성합니다.");              
 
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
+                    // Map 객체가 있을 경우 삭제하고 endPrefab 생성
+                    if (currentMapObject != null)
+                    {
+                        Vector3 position = currentMapObject.transform.position;
+                        Quaternion rotation = currentMapObject.transform.rotation;
 
-                    SceneManager.LoadScene("StartScene");
+                        Destroy(currentMapObject);
+                        Instantiate(endPrefab, position, rotation);
+
+                        Debug.Log($"Map이 삭제되고 '{endPrefab.name}' 프리팹이 생성되었습니다.");
+                    }
+
+                    // FakeMap 객체가 있을 경우 삭제하고 endPrefab 생성
+                    else if (currentFakeMapObject != null)
+                    {
+                        Vector3 position = currentFakeMapObject.transform.position;
+                        Quaternion rotation = currentFakeMapObject.transform.rotation;
+
+                        Destroy(currentFakeMapObject);
+                        Instantiate(endPrefab, position, rotation);
+
+                        Debug.Log($"FakeMap이 삭제되고 '{endPrefab.name}' 프리팹이 생성되었습니다.");
+                    }
+                    
                 }
             }
 

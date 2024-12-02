@@ -513,7 +513,6 @@ MonoBehaviour:
   - {fileID: 3060652161691885004, guid: 93bed61bed4d045448f90a8eb790ad75, type: 3}
   - {fileID: 2230976506645889862, guid: b077d808e8e455344a45ce30a3f6ee19, type: 3}
   - {fileID: 2797229393057775426, guid: 0b3d5814b0fb79e4e95fab57e5af5861, type: 3}
-  - {fileID: 931532960951763747, guid: 9f767099220385747981b237d95691a5, type: 3}
   - {fileID: 4561270288723540327, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
   numberPrefabs:
   - {fileID: 5188824644374633243, guid: f741be0f8f6862048ae8653b763761a4, type: 3}
@@ -522,6 +521,7 @@ MonoBehaviour:
   - {fileID: 5101202850681909441, guid: f82b2e4e95dab5449a13815b814566d3, type: 3}
   - {fileID: 3888865665495798299, guid: c878564d08b81434998581c57051384b, type: 3}
   resetPrefab: {fileID: 5093877393471790798, guid: 4e559fa58b1100b4aa0a3d3064280cb5, type: 3}
+  endPrefab: {fileID: 8458763001517521928, guid: f2dc151e4fc32e6418a4c09bb7a98c42, type: 3}
 --- !u!212 &51630447
 SpriteRenderer:
   m_ObjectHideFlags: 0
