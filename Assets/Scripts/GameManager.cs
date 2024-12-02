@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] numberPrefabs;  // Number 오브젝트 배열
     public GameObject resetPrefab;     // swapCount가 0일 때 생성할 프리팹
     public GameObject endPrefab;
+    
 
     private int currentNumberIndex = 0;  // 순차적인 인덱스 관리 변수
     private int swapCount = 0;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
 
     private void OnTriggerEnter(Collider collision)
     {
