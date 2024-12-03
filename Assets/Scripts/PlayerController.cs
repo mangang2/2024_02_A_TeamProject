@@ -106,6 +106,20 @@ public class PlayerController : MonoBehaviour
 
         theCamera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
     }
+
+    public bool isGrounded()    // ∂• √º≈© »Æ¿Œ
+    {
+        return Physics.Raycast(transform.position, Vector3.down, 10.5f);
+    }
+    //private void Update()
+    //{
+        //if (transform.position.y < 0.1)
+        //{
+           //Vector3 temp = transform.position;
+            //temp.y = 0.1f;
+            //transform.position = temp;
+        //}
+    //}
 }
 
 
