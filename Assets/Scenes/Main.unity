@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 51630453}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67043,57 +67043,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ac8d30c6a0d9642a11e5be4c440740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Root: {fileID: 4231823674346007670}
-  m_UpdateRate: 60
-  m_Damping: 0.255
-  m_DampingDistrib:
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_Elasticity: 0.075
-  m_ElasticityDistrib:
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_Stiffness: 0.202
-  m_StiffnessDistrib:
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_Inert: 0
-  m_InertDistrib:
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_Radius: 0
-  m_RadiusDistrib:
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_EndLength: 0
-  m_EndOffset: {x: 0, y: 0, z: 0}
-  m_Gravity: {x: 0, y: 1, z: 0}
-  m_Force: {x: 0, y: 0, z: 0}
-  m_Colliders:
-  - {fileID: 0}
-  m_Exclusions: []
-  m_FreezeAxis: 0
-  m_DistantDisable: 0
-  m_ReferenceObject: {fileID: 0}
-  m_DistanceToObject: 20
-  m_LocalGravity: {x: 0.00000007926138, y: -0.95078313, z: -0.30985725}
-  m_ObjectMove: {x: 0, y: 0, z: 0}
-  m_ObjectPrevPosition: {x: 1.3283316, y: 2.6876626, z: 0.04503593}
-  m_BoneTotalLength: 0.25825632
-  m_ObjectScale: 2.0000007
-  m_Time: 0
-  m_Weight: 1
-  m_DistantDisabled: 0
 --- !u!4 &7869195477688899009
 Transform:
   m_ObjectHideFlags: 0
@@ -69005,57 +68954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ac8d30c6a0d9642a11e5be4c440740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Root: {fileID: 9058748535200656984}
-  m_UpdateRate: 60
-  m_Damping: 0.255
-  m_DampingDistrib:
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_Elasticity: 0.075
-  m_ElasticityDistrib:
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_Stiffness: 0.202
-  m_StiffnessDistrib:
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_Inert: 0
-  m_InertDistrib:
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_Radius: 0
-  m_RadiusDistrib:
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_EndLength: 0
-  m_EndOffset: {x: 0, y: 0, z: 0}
-  m_Gravity: {x: 0, y: 1, z: 0}
-  m_Force: {x: 0, y: 0, z: 0}
-  m_Colliders:
-  - {fileID: 0}
-  m_Exclusions: []
-  m_FreezeAxis: 0
-  m_DistantDisable: 0
-  m_ReferenceObject: {fileID: 0}
-  m_DistanceToObject: 20
-  m_LocalGravity: {x: -0.17404093, y: -0.90464836, z: -0.3890003}
-  m_ObjectMove: {x: 0, y: 0, z: 0}
-  m_ObjectPrevPosition: {x: 1.364845, y: 2.6775231, z: 0.07951304}
-  m_BoneTotalLength: 0.23983684
-  m_ObjectScale: 2
-  m_Time: 0
-  m_Weight: 1
-  m_DistantDisabled: 0
 --- !u!4 &9060333457860182771
 Transform:
   m_ObjectHideFlags: 0
