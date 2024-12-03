@@ -28,7 +28,11 @@ public class PauseGame : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0;
         AudioListener.pause = true;
-        menuSet.SetActive(true);    //메뉴 UI 활성화
+        menuSet.SetActive(true);    // 메뉴 UI 활성화
+
+        // 커서를 보이게 하고 잠금 해제
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void ResumeGame()
@@ -36,7 +40,12 @@ public class PauseGame : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1;
         AudioListener.pause = false;
-        menuSet.SetActive(false);    //메뉴 UI 비활성화
+        menuSet.SetActive(false);    // 메뉴 UI 비활성화
+
+        // 커서를 숨기고 잠금
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
+
 
