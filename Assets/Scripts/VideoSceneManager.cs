@@ -21,6 +21,9 @@ public class VideoSceneManager : MonoBehaviour
         {
             Debug.LogError("VideoPlayer 컴포넌트를 찾을 수 없습니다!");
         }
+
+        // 커서를 잠금 해제하고 보이도록 설정
+        UnlockCursor();
     }
 
     // 영상 종료 시 호출되는 메서드
@@ -38,4 +41,12 @@ public class VideoSceneManager : MonoBehaviour
             videoPlayer.loopPointReached -= OnVideoEnd;
         }
     }
+
+    // 커서 잠금 해제 및 보이기
+    private void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None; // 커서 잠금 해제
+        Cursor.visible = true;                 // 커서 보이기
+    }
 }
+

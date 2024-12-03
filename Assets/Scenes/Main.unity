@@ -516,7 +516,6 @@ MonoBehaviour:
   - {fileID: 2230976506645889862, guid: b077d808e8e455344a45ce30a3f6ee19, type: 3}
   - {fileID: 2797229393057775426, guid: 0b3d5814b0fb79e4e95fab57e5af5861, type: 3}
   - {fileID: 4561270288723540327, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
-  - {fileID: 4561270288723540327, guid: 9ac94a6a8e42c4c9899a4320a7de0c4e, type: 3}
   numberPrefabs:
   - {fileID: 5188824644374633243, guid: f741be0f8f6862048ae8653b763761a4, type: 3}
   - {fileID: 306182545855515830, guid: 5ab378f6711adf348a78eead0df83b37, type: 3}
@@ -28239,7 +28238,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -39276,7 +39275,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
