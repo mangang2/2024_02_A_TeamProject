@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class SpeakerVolume : MonoBehaviour
 {
     // 소리를 재생할 AudioSource 컴포넌트
@@ -11,8 +10,8 @@ public class SpeakerVolume : MonoBehaviour
     // 플레이어의 위치를 나타내는 Transform
     private Transform player;
 
-    // 소리가 들리는 최대 거리
-    public float maxDistance = 10f;
+    // 소리가 들리는 최대 거리 (소리 범위를 더 넓힘)
+    public float maxDistance = 200f; // 소리 범위를 100으로 확장
 
     // 최대 볼륨이 되는 최소 거리
     public float minDistance = 1f;
@@ -105,14 +104,12 @@ public class SpeakerVolume : MonoBehaviour
             if (!audioSource.isPlaying && volume > 0)
             {
                 audioSource.Play();
-            }// 현재 볼륨을 콘솔에 출력 (디버깅 용도)
-            Debug.Log($"현재 볼륨: {volume:F2}");
+            }
         }
         else
         {
             // 플레이어가 최대 거리를 벗어나면 소리 중지
             audioSource.Stop();
-            Debug.Log("소리 중지: 스피커에서 너무 멀어졌습니다.");
         }
     }
 }
