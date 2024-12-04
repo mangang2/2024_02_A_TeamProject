@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        audioSlider.value = 0.25f; // 슬라이더 초기값 (0.25)
+        audioSlider.value = 1f; // 슬라이더 초기값
         AudioControl(); // 초기 볼륨을 슬라이더 값에 맞춤
     }
 
