@@ -7,6 +7,8 @@ public class EndSceneImageController : MonoBehaviour
 {
     public VideoPlayer videoPlayer;  // 비디오 플레이어
     public GameObject imageObject;   // 활성화할 이미지 오브젝트
+    public AudioSource audioSource;  // 이미지와 함께 재생할 오디오 소스
+    public AudioClip soundClip;      // 재생할 사운드 클립
     public float slideDistance = 100f;  // 이동 거리
 
     private RectTransform imageRectTransform;  // 이미지 오브젝트의 RectTransform
@@ -36,6 +38,9 @@ public class EndSceneImageController : MonoBehaviour
 
         // 이미지 활성화
         imageObject.SetActive(true);
+
+        // 사운드 재생
+        audioSource.PlayOneShot(soundClip);
 
         // 시작 위치를 화면 밖으로 설정
         Vector2 startPos = new Vector2(imageRectTransform.anchoredPosition.x, imageRectTransform.anchoredPosition.y + slideDistance);
